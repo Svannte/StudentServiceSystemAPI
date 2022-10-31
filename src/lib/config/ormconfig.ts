@@ -15,9 +15,9 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       database: 'postgres',
       autoLoadEntities: true,
       synchronize: true,
-      entities: ['src/**/**.entity{.ts, .js}'],
-      migrations: ['src/lib/migrations/**/*{.ts, .js}'],
-      subscribers: ['src/lib/subscriber/**/*{.ts,.js}'],
+      entities: ['dist/**/**.entity{.ts, .js}'],
+      migrations: ['dist/lib/migrations/**/*{.ts, .js}'],
+      subscribers: ['dist/lib/subscriber/**/*{.ts,.js}'],
     };
   }
 }
