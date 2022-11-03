@@ -6,9 +6,9 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Department } from './department.entity';
-import { User } from './user.entity';
-import { Schedule } from './schedule.entity';
+import { Department } from '../../department/entities/department.entity';
+import { User } from '../../user/entities/user.entity';
+import { Schedule } from '../../../entities/schedule.entity';
 
 @Entity()
 export class Group {

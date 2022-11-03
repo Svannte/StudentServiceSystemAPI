@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { Group } from './group.entity';
+import { Group } from '../../group/entities/group.entity';
 
-enum roles {
+export enum roles {
   Unknow = 'UNKNOW',
   Student = 'STUDENT',
   Teacher = 'TEACHER',
@@ -19,7 +19,7 @@ export class User {
   @Column({ unique: true })
   email: string;
 
-  @Column({ unique: true })
+  @Column({ select: false })
   hashed_password: string;
 
   @Column()

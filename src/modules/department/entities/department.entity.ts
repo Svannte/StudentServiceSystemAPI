@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Group } from './group.entity';
+import { Group } from '../../group/entities/group.entity';
 
 @Entity()
 export class Department {
@@ -8,6 +8,9 @@ export class Department {
 
   @Column()
   name: string;
+
+  @Column({ nullable: true })
+  email: string;
 
   @Column({ nullable: true })
   address?: string;

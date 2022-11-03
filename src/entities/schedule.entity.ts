@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Subject } from './subject.entity';
-import { Group } from './group.entity';
+import { Group } from '../modules/group/entities/group.entity';
 
 @Entity()
 export class Schedule {
