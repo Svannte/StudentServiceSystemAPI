@@ -9,5 +9,6 @@ import { APP_PIPE } from '@nestjs/core';
   imports: [TypeOrmModule.forFeature([Department])],
   providers: [DepartmentService], //{ provide: APP_PIPE, useClass: ParseIntPipe }],
   controllers: [DepartmentController],
+  exports: [DepartmentService],
 })
 export class DepartmentModule {}

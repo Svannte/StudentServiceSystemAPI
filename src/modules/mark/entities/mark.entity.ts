@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { User } from '../modules/user/entities/user.entity';
-import { Subject } from './subject.entity';
+import { User } from '../../user/entities/user.entity';
+import { Subject } from '../../../entities/subject.entity';
 
 @Entity()
 export class Mark {
@@ -9,6 +9,9 @@ export class Mark {
 
   @Column({ type: 'timestamp' })
   dateOfIssue: Date;
+
+  @Column()
+  subjectName: string;
 
   @Column()
   markValue: number;

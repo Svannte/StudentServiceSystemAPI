@@ -20,7 +20,7 @@ export class UserService {
   async create(createUserDto: CreateUserDto) {
     const user = this.userRepository.create({
       ...createUserDto,
-      hashed_password: createUserDto.password, // TODO: Hash password
+      hashed_password: createUserDto.password, // TODO: Hash password (bcrypt)
     });
     return await this.userRepository.save(user);
   }
@@ -30,6 +30,17 @@ export class UserService {
       where: { id: id },
       relations: { group: true },
     });
+  }
+
+  async findOneByEmail(email: string): Promise<User> {
+    const user = await this.userRepository.findOne({
+      select: ['id', 'email', 'hashed_password'],
+      where: { email: email },
+    });
+    if (!user) {
+      throw new NotFoundException(`User with email:${email} does not exist`);
+    }
+    return user;
   }
 
   async update(id: number, updateUserDto: UpdateUserDto) {

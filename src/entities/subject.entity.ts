@@ -5,7 +5,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { Mark } from './mark.entity';
+import { Mark } from '../modules/mark/entities/mark.entity';
 import { Schedule } from './schedule.entity';
 
 @Entity()

@@ -14,5 +14,6 @@ import { RouterModule } from '@nestjs/core';
   ],
   controllers: [UserController],
   providers: [UserService],
+  exports: [UserService],
 })
 export class UserModule {}

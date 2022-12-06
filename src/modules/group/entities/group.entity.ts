@@ -27,5 +27,5 @@ export class Group {
   schedules: Schedule[];
 
   @OneToMany(() => User, (user) => user.group)
-  students?: User[];
+  students?: User[]; // TODO change to users?
 }
